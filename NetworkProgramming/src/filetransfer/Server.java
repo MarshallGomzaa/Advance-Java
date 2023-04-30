@@ -26,7 +26,7 @@ public class Server {
         try(Socket sc=ss.accept()) {
             System.out.println("Connected");
             dataInputStream=new DataInputStream(sc.getInputStream());
-            recieveFile("");
+            recieveFile("C:\\Users\\Marshall\\Desktop\\new");
             dataInputStream.close();
             
             
@@ -42,7 +42,7 @@ public class Server {
         FileOutputStream fileOutputStream=new FileOutputStream(path);
         long size=dataInputStream.readLong();
         byte[] buffer=new byte[4*1024];
-        while(size>0 && (bytes = dataInputStream.read(buffer,0,(int)Math.min(buffer.length,size)))!=-1);{
+        while(size>0 && (bytes = dataInputStream.read(buffer,0,(int)Math.min(buffer.length,size)))!=-1){
            fileOutputStream.write(buffer,0,bytes);
            size -= bytes;
         }

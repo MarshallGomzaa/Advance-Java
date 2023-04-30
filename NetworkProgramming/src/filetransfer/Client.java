@@ -19,7 +19,7 @@ import java.nio.Buffer;
 public class Client {
     public static DataOutputStream dataOutputStream=null;
     public static void main(String[] args) {
-        try(Socket sc=new Socket("192.168.0.111",3355)) {
+        try(Socket sc=new Socket("192.168.0.121",3355)) {
             dataOutputStream=new DataOutputStream(sc.getOutputStream());
             //send file
             sendfile("D:\\New folder\\DSunit7.pdf");

@@ -4,26 +4,30 @@
  */
 package backend;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jakarta.servlet.http.HttpServlet;
+
+
 
 /**
  *
  * @author Marshall
  */
-public class GetAllUsers extends HttpServlet {
-     Connection con;
+public class getItemSelectBox extends HttpServlet {
+    Connection con;
     
 
     @Override
-    public void init() throws jakarta.servlet.ServletException {
+    public void init() throws ServletException {
        try {
             con = DBConnect.connect();
         } catch (ClassNotFoundException ex) {
@@ -32,30 +36,27 @@ public class GetAllUsers extends HttpServlet {
     }
 
     @Override
-    protected void doPost(jakarta.servlet.http.HttpServletRequest req, jakarta.servlet.http.HttpServletResponse resp) throws jakarta.servlet.ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-        String query = "select*from tbl_user";
+        String query = "select*from tbl_item";
         Statement stmt=con.createStatement();
         ResultSet result=stmt.executeQuery(query);
-        String table="<table border='1'>";
-            table+="<tr>";
-            table+="<th>Id<th>Username<th>Status";
-            table+="</tr>";
-        while(result.next()){
+
+           String combo ="<select name='itemid'>";
+           
+           while(result.next()){
             String id=result.getString("id");
-            table+="<tr>";
-            table+="<td>"+result.getString("id")+"</td>";
-            table+="<td>"+result.getString("username")+"</td>";
-            table+="<td>"+result.getString("password")+"</td>";
-            table+="<td>"+result.getString("status")+"</td>";
-            table+="<td><a onclick='return confirm(\"Are you sure you want to delete?\")'href ='../SuspendUser?id="+id+"'>Suspend</a></td>";
-            table+="<td><a onclick='return confirm(\"Are you sure you want to delete?\")'href ='../ActivateUser?id="+id+"'>Activated</a></td>";
-            table+="</tr>";
+            String itemName=result.getString("name");
+            combo+="<option value='"+id+"'>";
+            combo+=itemName;
+            combo+="</option>";
+            
+
             
         }
-        table+="</table>";
+        combo+="</select>";
         resp.setContentType("text/html");
-        resp.getWriter().println(table);
+        resp.getWriter().println(combo);
         
        
        // result.next();
@@ -72,6 +73,6 @@ public class GetAllUsers extends HttpServlet {
             Logger.getLogger(SaveItemData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-
 }
+
+

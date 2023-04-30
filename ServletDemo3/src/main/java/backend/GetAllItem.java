@@ -40,7 +40,7 @@ public class GetAllItem extends HttpServlet{
         String query = "select*from tbl_item";
         Statement stmt=con.createStatement();
         ResultSet result=stmt.executeQuery(query);
-        String table="<table>";
+        String table="<table border='1'>";
             table+="<tr>";
             table+="<th>Id<th>Name<th>Price<th>Stock";
             table+="</tr>";

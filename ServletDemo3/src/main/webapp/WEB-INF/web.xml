@@ -48,6 +48,18 @@
         <servlet-name>logout</servlet-name>
         <servlet-class>backend.logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getItemSelectBox</servlet-name>
+        <servlet-class>backend.getItemSelectBox</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>purchase</servlet-name>
+        <servlet-class>backend.purchase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sales</servlet-name>
+        <servlet-class>backend.sales</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>newone</servlet-name>
         <url-pattern>/newone</url-pattern>
@@ -151,6 +163,18 @@
     <servlet-mapping>
         <servlet-name>logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getItemSelectBox</servlet-name>
+        <url-pattern>/getItemSelectBox</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>purchase</servlet-name>
+        <url-pattern>/purchase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sales</servlet-name>
+        <url-pattern>/sales</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

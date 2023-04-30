@@ -20,27 +20,14 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>8.0.0</version>
-            <type>jar</type>
+            <version>${jakartaee}</version>
+            <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
-            <version>3.1.0</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
+    <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.18</version>
-        </dependency>
-    </dependencies>
+        </dependency></dependencies>
     
     <build>
         <plugins>

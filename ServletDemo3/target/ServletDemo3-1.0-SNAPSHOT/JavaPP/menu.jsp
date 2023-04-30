@@ -33,15 +33,16 @@
 	<a href="Items_display.jsp">Display Items</a>
 	<a href="signup_form.jsp" >User Registration</a>
         <a href="display_user.jsp" >Display User</a>
-        <a href="item_purchase.jsp" >Purchase</a>
-        <a href="item_sales.jsp">Sale</a>
+        <a href="purchase.jsp" >Purchase</a>
+        <a href="items_sales.jsp">Sale</a>
 
 		<a href="purchase_display.php">Display Purchase Data</a>
 
 	<a href="stock.php">Stock</a>
         <%
-            if(session.getAttribute("msg")!=null){
-            out.println(session.getAttribute("msg"));
+            if(session.getAttribute("successmsg")!=null){
+            out.println(session.getAttribute("successmsg"));
+            session.removeAttribute("successmsg");
             }
         %>
 
