@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,6 +32,7 @@ public class loginUser extends HttpServlet {
     try {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        
         String status = "activate";
         con = DBConnect.connect();
         String query = "SELECT * FROM `tbl_user` WHERE username = ? AND password=? AND status = ? ";
@@ -41,6 +43,29 @@ public class loginUser extends HttpServlet {
         ResultSet result = stmt.executeQuery();
         HttpSession s=req.getSession();
         if(result.next()){
+            
+            if(req.getParameter("remUser")!=null){
+                System.out.println("checked");
+                Cookie c=new Cookie("username", username);
+                Cookie c1=new Cookie("password", password);
+                
+                res.addCookie(c1);
+                res.addCookie(c);
+                
+            }else{
+                Cookie c[]=req.getCookies();
+                for(Cookie co:c){
+                    if(co.getName().equals("username")){
+                       co.setMaxAge(0);
+                        res.addCookie(co);
+                    }
+                    if(co.getName().equals("password")){
+                        co.setMaxAge(0);
+                        res.addCookie(co);
+                    }
+                }
+            }
+            
             s.setAttribute("uid", result.getString("id"));
             s.setAttribute("uname", username);
             res.sendRedirect("JavaPP/menu.jsp");

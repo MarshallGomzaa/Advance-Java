@@ -60,6 +60,14 @@
         <servlet-name>sales</servlet-name>
         <servlet-class>backend.sales</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cookietest</servlet-name>
+        <servlet-class>backend.cookietest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewItem</servlet-name>
+        <servlet-class>backend.ViewItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>newone</servlet-name>
         <url-pattern>/newone</url-pattern>
@@ -175,6 +183,14 @@
     <servlet-mapping>
         <servlet-name>sales</servlet-name>
         <url-pattern>/sales</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cookietest</servlet-name>
+        <url-pattern>/cookietest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewItem</servlet-name>
+        <url-pattern>/ViewItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

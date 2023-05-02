@@ -53,6 +53,7 @@ public class GetAllItem extends HttpServlet{
             table+="<td>"+result.getString("stock")+"</td>";
             table+="<td><a onclick='return confirm(\"Are you sure you want to delete?\")'href ='../deleteItem?id="+id+"'>Delete</a></td>";
             table+="<td><a onclick=''href ='../GetOneItem?id="+id+"'>Update</a></td>";
+            table+="<td><a onclick=''href ='../ViewItem?id="+id+"'>View</a></td>";
             
             table+="</tr>";
             

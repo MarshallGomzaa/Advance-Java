@@ -48,6 +48,7 @@ public class SaveItemData extends HttpServlet {
     public void PreparedWay(HttpServletRequest req, HttpServletResponse res){
         String itemName = req.getParameter("itemName");
         int price = Integer.parseInt(req.getParameter("price"));
+        String photo = req.getParameter("photo");
         try {
             con = DBConnect.connect();
             String query = "INSERT INTO `tbl_item`(`name`, `price`, `stock`, `photo`) VALUES (?,?,?,?)";
@@ -56,7 +57,7 @@ public class SaveItemData extends HttpServlet {
             stat.setString(1, itemName);
             stat.setInt(2, price);
             stat.setInt(3, 0);
-            stat.setString(4, "");
+            stat.setString(4, photo);
             stat.executeUpdate();
             
             stat.executeUpdate();
@@ -68,14 +69,16 @@ public class SaveItemData extends HttpServlet {
         }
         System.out.println(itemName);
         System.out.println(price);
+        System.out.println(photo);
     }
 
     public void normalWay(HttpServletRequest req, HttpServletResponse res){
         String itemName = req.getParameter("itemName");
         int price = Integer.parseInt(req.getParameter("price"));
+        String photo = req.getParameter("photo");
         try {
             Connection con = DBConnect.connect();
-            String query = String.format("INSERT INTO `tbl_item`(`name`, `price`, `stock`, `photo`) VALUES ('%s', %d,0,'')",itemName,price);
+            String query = String.format("INSERT INTO `tbl_item`(`name`, `price`, `stock`, `photo`) VALUES ('%s', %d,0,'%s')",itemName,price,photo);
             Statement stat  = con.createStatement();
             stat.executeUpdate(query);
             res.getWriter().println("inserted succesfully");
@@ -86,6 +89,7 @@ public class SaveItemData extends HttpServlet {
         }
         System.out.println(itemName);
         System.out.println(price);
+        System.out.println(photo);
         
     }
     @Override

@@ -1,4 +1,18 @@
-    <head>
+<%
+   String username="";
+   String password="";
+    
+    Cookie c[]=request.getCookies();
+    for(Cookie co:c){
+    if(co.getName().equals("username")){
+    username=co.getValue();
+    }
+    if(co.getName().equals("password")){
+    password=co.getValue();
+    }
+    }
+    %>
+<html><head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
         <link rel="stylesheet" href="style.css"/>
@@ -24,11 +38,12 @@
 
 
         <form  action="../loginUser" method="post" >
-            <label>Username</label> <input type="text" name="username">
+            <label>Username</label> <input type="text" name="username" value="<%= username %>">
             
-            <label>Password</label> <input type="text" name="password">
-            <br><br/>
-            
+            <label>Password</label> <input type="text" name="password" value="<%= password %>">
+            <br>
+            <input type="checkbox" name="remUser">Remember user
+            <br/>
             <input type="submit" class="btn success" value="login">
         </form>
         
