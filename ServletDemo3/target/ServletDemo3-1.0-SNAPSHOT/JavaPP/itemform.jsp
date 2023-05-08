@@ -9,11 +9,11 @@
 
 
 
-        <form  action="../SaveItemData" method="post" >
+        <form  action="../SaveItemData" method="post" enctype="multipart/form-data" >
             <label>Item Name</label> <input type="text" name="itemName">
             
             <label>Price</label> <input type="text" name="price">
-            <label>Photo</label> <input type="file" name="photo">
+            <label>Upload Photo</label> <input type="file" name="photo">
  
             
             <input type="submit" class="btn success">

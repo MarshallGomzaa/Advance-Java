@@ -68,6 +68,10 @@
         <servlet-name>ViewItem</servlet-name>
         <servlet-class>backend.ViewItem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getItemForView</servlet-name>
+        <servlet-class>backend.getItemForView</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>newone</servlet-name>
         <url-pattern>/newone</url-pattern>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>ViewItem</servlet-name>
         <url-pattern>/ViewItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getItemForView</servlet-name>
+        <url-pattern>/getItemForView</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
