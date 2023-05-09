@@ -45,7 +45,10 @@ public class getItemForView extends HttpServlet {
         ResultSet result = stmt.executeQuery();
         result.next();
         
+        
+        
         HttpSession s = (HttpSession) req.getSession();
+       
         s.setAttribute("id",result.getString("id"));
         s.setAttribute("itemName",result.getString("name"));
         s.setAttribute("price",result.getString("price"));
