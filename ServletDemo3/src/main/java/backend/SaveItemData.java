@@ -10,6 +10,7 @@ package backend;
  */
 
 
+import Model.item;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -18,6 +19,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import jakarta.ws.rs.core.Response;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -47,8 +49,22 @@ public class SaveItemData extends HttpServlet {
    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        //normalWay(req, res);
-       PreparedWay(req, res);
+        try {
+
+  
+        item item1=new item();
+        item1.setName(req.getParameter("itemName"));
+        item1.setPhoto("");
+        item1.setPrice(Integer.parseInt(req.getParameter("price")));
+        item1.setStock(0);
+        
+        item1.saveItem();
+      res.getWriter().println("success");
+        } catch (ClassNotFoundException ex) {
+              res.getWriter().println(ex.getMessage());
+        } catch (SQLException ex) {
+              res.getWriter().println(ex.getMessage());
+        }
     }
     
     public void PreparedWay(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException{

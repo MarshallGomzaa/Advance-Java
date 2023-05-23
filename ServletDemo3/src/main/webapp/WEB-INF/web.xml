@@ -72,6 +72,14 @@
         <servlet-name>getItemForView</servlet-name>
         <servlet-class>backend.getItemForView</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>backend.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet1</servlet-name>
+        <servlet-class>backend.NewServlet1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>newone</servlet-name>
         <url-pattern>/newone</url-pattern>
@@ -199,6 +207,14 @@
     <servlet-mapping>
         <servlet-name>getItemForView</servlet-name>
         <url-pattern>/getItemForView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet1</servlet-name>
+        <url-pattern>/NewServlet1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

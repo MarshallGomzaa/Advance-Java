@@ -4,6 +4,7 @@
  */
 package backend;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -54,7 +55,10 @@ public class getItemForView extends HttpServlet {
         s.setAttribute("price",result.getString("price"));
         s.setAttribute("photo", result.getString("photo"));
         
-        resp.sendRedirect("JavaPP/viewItem.jsp");
+      resp.sendRedirect("JavaPP/viewItem.jsp");
+//RequestDispatcher rd=req.getRequestDispatcher("JavaPP/viewItem.jsp");
+//rd.include(req, resp);
+//rd.include(req, resp);
     } catch (SQLException ex) {
         Logger.getLogger(GetOneUser.class.getName()).log(Level.SEVERE, null, ex);
     }

@@ -1,8 +1,13 @@
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\GetAllItem.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\getItemForView.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\updateItem.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\MyServlet\Httpservletdemo.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\Model\sales.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\com\mycompany\servletdemo3\resources\JakartaEE10Resource.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\Model\item.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\NewServlet.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\MyServlet\FirstServletDemo.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\Model\purchase.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\ActivateUser.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\purchase.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\ForSession\getSession.java
@@ -19,9 +24,10 @@ C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\ForSessi
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\MyServlet\genericwala.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\cookietest.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\saveUser.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\Model\user.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\com\mycompany\servletdemo3\JakartaRestConfiguration.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\loginUser.java
-C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\ViewItem.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\sales.java
+C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\NewServlet1.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\logout.java
 C:\Users\Marshall\Documents\NetBeansProjects\ServletDemo3\src\main\java\backend\SaveItemData.java
